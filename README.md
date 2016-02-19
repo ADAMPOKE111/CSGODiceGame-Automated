@@ -1,10 +1,10 @@
-# CSGODiceGame-Automated
+# CSGODiceGame Automated
 
 CSGODiceGame Automated is a userscript that automates [CSGODiceGame.com](https://csgodicegame.com/) betting using martingale system.
 
 ## Usage
 
-To use the script you'll need to click on [script.js](https://github.com/ADAMPOKE111/CSGODiceGame-Automated/blob/master/script.js) and copy all the code. Then go over to [CSGODiceGame.com](https://csgodicegame.com/) and press F12 to open the developer menu (Chrome, Firefox, Opera & Similar) and go over to the "Console", paste the code, and hit enter. You're done!
+To use the script you'll need to click on [script.js](https://raw.githubusercontent.com/ADAMPOKE111/CSGODiceGame-Automated/master/script.js) and copy all the code. Then go over to [CSGODiceGame.com](https://csgodicegame.com/) and press F12 to open the developer menu (Chrome, Firefox, Opera & Similar) and go over to the "Console", paste the code, and hit enter. You're done!
 
 
 ## Bugs, Issues & Improvements

@@ -2,7 +2,7 @@
 // @name            csgodicegame_adam
 // @description     An userscript that automates csgodicegame.com betting using martingale system.
 // @namespace       automated@adam
-// @version         1.0
+// @version         1.1
 // @author          Adam
 // @downloadURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js
 // @updateURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js
@@ -14,9 +14,9 @@ alert(":: CSGODiceGame.com Automated Script Loaded! ::\n:: Be warned: it only cu
 
 // Declare variables
 
-var init = 0.01; // Initial bet value
+var init = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2)); // Initial bet value
 var delay = 100; // Delay in milliseconds between bets, increase if connection/computer is slow
-var maxBetValue = 100; // Maximum amount script is allowed to bet (good value = half your balance)
+var maxBetValue = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2)); // Maximum amount script is allowed to bet (good value = half your balance)
 
 var start = init;
 var $Button = $("#roll");
@@ -28,18 +28,20 @@ var menu = document.createElement('div');
 menu.innerHTML = '' +
     '<div class="form-group">' +
     '<div class="text-center col-sm-6 col-sm-offset-3">' +
-    '<p><u>CSGODiceGame.com Automated <small>by Adam^</small></u></p>' +
-    '<input id="rollscript" type="button" value="Start the Script" onClick="startscript()">' +
-    '<input id="rollscript" type="button" value="End the Script" onClick="endscript()">' +
+    '<p><a href="https://github.com/ADAMPOKE111/CSGODiceGame-Automated">CSGODiceGame.com Automated <small>by Adam^</small></a></p>' +
+    '<input id="rollscript" type="button" value="| Start the Script |" onClick="startscript()">' +
+    '<input id="rollscript" type="button" value="| End the Script |" onClick="endscript()">' +
+    '<input id="rollscript" type="button" value="| Change bet value, delay etc. |" onClick="changevars()">' +
     '</div>' +
     '</div>';
 document.getElementsByClassName('form-horizontal')[0].appendChild(menu);
 
 function startscript() {
+    alert("Script started!\n - Base bet: " + init + "\n - Max bet: " + maxBetValue + "\n - Delay (ms): " + delay);
     loop = true;
 
     function roll() {
-        if (loop == true) {
+        if (loop === true) {
             $bet.val(start);
             $Button.click();
             refreshIntervalId = setInterval(roll2, delay);
@@ -73,4 +75,12 @@ function startscript() {
 
 function endscript() {
     loop = false;
+}
+
+function changevars() {
+    endscript();
+    init = parseFloat(prompt("Please enter the new inital betting value", Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
+    start = init;
+    delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
+    maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
 }

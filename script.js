@@ -2,7 +2,7 @@
 // @name            csgodicegame_adam
 // @description     An userscript that automates csgodicegame.com betting using martingale system.
 // @namespace       automated@adam
-// @version         1.1
+// @version         1.11
 // @author          Adam
 // @downloadURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js
 // @updateURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js
@@ -83,8 +83,6 @@ function changebase() {
     endscript();
     init = parseFloat(prompt("Please enter the new inital betting value", Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     start = init;
-    delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
-    maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
 }
 
 function changemax() {
@@ -95,5 +93,4 @@ function changemax() {
 function changedelay() {
     endscript();
     delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
-    maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
 }

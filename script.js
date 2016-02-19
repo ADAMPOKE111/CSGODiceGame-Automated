@@ -81,12 +81,14 @@ function endscript() {
 
 function changebase() {
     endscript();
-    init = parseFloat(prompt("Please enter the new inital betting value", Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
+    n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
+    init = parseFloat(prompt("Please enter the new inital betting value", n);
     start = init;
 }
 
 function changemax() {
     endscript();
+    n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
     maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
 }
 

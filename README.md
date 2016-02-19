@@ -4,7 +4,7 @@ CSGODiceGame Automated is a userscript that automates csgodicegame.com betting u
 
 ## Usage
 
-To use the script you'll need to install ![Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) if using Chrome or ![Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) then once that's done for simplicity you can just click ![here](http://adampoke111.site11.com/projects/csgodicegame_adam.user.js) to install the script for CSGODiceGame. The script will also auto-update to the latest version by using this method.
+To use the script you'll need to install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) if using Chrome or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) then once that's done for simplicity you can just click [here](http://adampoke111.site11.com/projects/csgodicegame_adam.user.js) to install the script for CSGODiceGame. The script will also auto-update to the latest version by using this method.
 
 
 ## Bugs, Issues & Features to Add in the Future

@@ -31,7 +31,9 @@ menu.innerHTML = '' +
     '<p><a href="https://github.com/ADAMPOKE111/CSGODiceGame-Automated">CSGODiceGame.com Automated <small>by Adam^</small></a></p>' +
     '<input id="rollscript" type="button" value="| Start the Script |" onClick="startscript()">' +
     '<input id="rollscript" type="button" value="| End the Script |" onClick="endscript()">' +
-    '<input id="rollscript" type="button" value="| Change bet value, delay etc. |" onClick="changevars()">' +
+    '<input id="rollscript" type="button" value="| Change base bet |" onClick="changebase()">' +
+    '<input id="rollscript" type="button" value="| Change max bet |" onClick="changemax()">' +
+    '<input id="rollscript" type="button" value="| Change delay |" onClick="changedelay()">' +
     '</div>' +
     '</div>';
 document.getElementsByClassName('form-horizontal')[0].appendChild(menu);
@@ -77,10 +79,21 @@ function endscript() {
     loop = false;
 }
 
-function changevars() {
+function changebase() {
     endscript();
     init = parseFloat(prompt("Please enter the new inital betting value", Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     start = init;
+    delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
+    maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
+}
+
+function changemax() {
+    endscript();
+    maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
+}
+
+function changedelay() {
+    endscript();
     delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
     maxBetValue = parseFloat(prompt("Please enter the new maximum bet", Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
 }

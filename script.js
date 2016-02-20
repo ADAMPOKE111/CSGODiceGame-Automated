@@ -87,8 +87,7 @@ function changebase() {
 }
 
 function changemax() {
-    endscript();
-    n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2));
+    n = parseFloat(Math.floor(document.getElementById('goCoins').innerHTML).toFixed(2));
     maxBetValue = parseFloat(prompt("Please enter the new maximum bet", n));
 }
 

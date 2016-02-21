@@ -21,6 +21,7 @@ var start = init;
 var $Button = $("#roll");
 var $bet = $("#bet");
 var loop = true;
+var firsttime = true;
 
 // Create the interface
 var menu = document.createElement('div');
@@ -81,6 +82,9 @@ function endscript() {
 function changebase() {
     n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     init = parseFloat(prompt("Please enter the new inital betting value", n));
+    if (firsttime = false) {
+        start = init;
+    }
 }
 
 function changemax() {

@@ -13,7 +13,6 @@
 alert(":: CSGODiceGame.com Automated Script Loaded! ::\n:: Be warned: it only currently works with payout set to 2.00x otherwise the script will fail and bet incorrectly ::");
 
 // Declare variables
-
 var init = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2)); // Initial bet value
 var delay = 100; // Delay in milliseconds between bets, increase if connection/computer is slow
 var maxBetValue = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2)); // Maximum amount script is allowed to bet (good value = half your balance)
@@ -80,10 +79,8 @@ function endscript() {
 }
 
 function changebase() {
-    endscript();
     n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     init = parseFloat(prompt("Please enter the new inital betting value", n));
-    start = init;
 }
 
 function changemax() {
@@ -92,6 +89,5 @@ function changemax() {
 }
 
 function changedelay() {
-    endscript();
     delay = parseInt(prompt("Please enter the new delay (milliseconds)", "100"));
 }

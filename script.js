@@ -41,6 +41,7 @@ document.getElementsByClassName('form-horizontal')[0].appendChild(menu);
 function startscript() {
     alert("Script started!\n - Base bet: " + init + "\n - Max bet: " + maxBetValue + "\n - Delay (ms): " + delay);
     loop = true;
+    firsttime = false;
 
     function roll() {
         if (loop === true) {
@@ -82,7 +83,7 @@ function endscript() {
 function changebase() {
     n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     init = parseFloat(prompt("Please enter the new inital betting value", n));
-    if (firsttime = false) {
+    if (firsttime = true) {
         start = init;
     }
 }

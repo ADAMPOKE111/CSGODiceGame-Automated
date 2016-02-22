@@ -17,11 +17,22 @@ var init = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) 
 var delay = 100; // Delay in milliseconds between bets, increase if connection/computer is slow
 var maxBetValue = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / 2).toFixed(2)); // Maximum amount script is allowed to bet (good value = half your balance)
 
+// Preliminary Setup
 var start = init;
-var $Button = $("#roll");
-var $bet = $("#bet");
+var btRoll = document.getElementById("roll");
+var tbBet = document.getElementById("bet");
+var btOverUnder = document.getElementById("oddsOverUnder");
+var rollUnder;
 var loop = true;
-var firsttime = true;
+var firstTime = true;
+
+// More Preliminary Setup
+function checkOverUnder() {
+    if ((btOverUnder.value).indexOf("<") != "0") {
+        btOverUnder.click();
+    }
+rollUnder = parseInt((btOverUnder.value).replace(/[^\d.]/g,''));
+}
 
 // Create the interface
 var menu = document.createElement('div');
@@ -31,9 +42,10 @@ menu.innerHTML = '' +
     '<p><a href="https://github.com/ADAMPOKE111/CSGODiceGame-Automated">CSGODiceGame.com Automated <small>by Adam^</small></a></p>' +
     '<input id="rollscript" type="button" value="| Start the Script |" onClick="startscript()">' +
     '<input id="rollscript" type="button" value="| End the Script |" onClick="endscript()">' +
-    '<input id="rollscript" type="button" value="| Change base bet |" onClick="changebase()">' +
-    '<input id="rollscript" type="button" value="| Change max bet |" onClick="changemax()">' +
-    '<input id="rollscript" type="button" value="| Change delay |" onClick="changedelay()">' +
+    '<input id="rollscript" type="button" value="| Change Base Bet |" onClick="changebase()">' +
+    '<input id="rollscript" type="button" value="| Change Max Bet |" onClick="changemax()">' +
+    '<input id="rollscript" type="button" value="| Change Delay |" onClick="changedelay()">' +
+    '<input id="rollscript" type="button" value="| Refresh Values |" onClick="checkOverUnder()">' +
     '</div>' +
     '</div>';
 document.getElementsByClassName('form-horizontal')[0].appendChild(menu);
@@ -41,12 +53,13 @@ document.getElementsByClassName('form-horizontal')[0].appendChild(menu);
 function startscript() {
     alert("Script started!\n - Base bet: " + init + "\n - Max bet: " + maxBetValue + "\n - Delay (ms): " + delay);
     loop = true;
-    firsttime = false;
+    firstTime = false;
+    checkOverUnder();
 
     function roll() {
         if (loop === true) {
-            $bet.val(start);
-            $Button.click();
+            tbBet.value = start;
+            btRoll.click();
             refreshIntervalId = setInterval(roll2, delay);
         }
     }
@@ -83,7 +96,7 @@ function endscript() {
 function changebase() {
     n = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2));
     init = parseFloat(prompt("Please enter the new inital betting value", n));
-    if (firsttime = true) {
+    if (firstTime === true) {
         start = init;
     }
 }

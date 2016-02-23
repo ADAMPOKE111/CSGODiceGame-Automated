@@ -2,7 +2,7 @@
 // @name            csgodicegame_adam
 // @description     An userscript that automates csgodicegame.com betting using martingale system.
 // @namespace       automated@adam
-// @version         1.11
+// @version         1.2
 // @author          Adam
 // @downloadURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js
 // @updateURL http://adampoke111.site11.com/projects/csgodicegame_adam.user.js

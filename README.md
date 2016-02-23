@@ -12,8 +12,7 @@ To use the script you'll need to click on [script.js](https://raw.githubusercont
 * None known
 
 ### Issues
-* Script only works with 2.00x payout (< 4875, 48.75% chance to win) - see improvements below
+* None known
 
 ### Features to Add
-* Script will work other pencentages to win other than 48.75%
 * Improve the User Interface

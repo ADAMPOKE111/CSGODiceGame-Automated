@@ -10,7 +10,7 @@
 // @run-at          document-end
 // @grant           none
 // ==/UserScript==
-alert(":: CSGODiceGame.com Automated Script Loaded! ::\n:: Be warned: it only currently works with payout set to 2.00x otherwise the script will fail and bet incorrectly ::");
+alert(":: CSGODiceGame.com Automated Script Loaded!");
 
 // Declare variables
 var init = parseFloat((Math.floor(document.getElementById('goCoins').innerHTML) / Math.pow(2, 8)).toFixed(2)); // Initial bet value
@@ -67,16 +67,16 @@ function startscript() {
     function roll2() {
         var thestring = document.getElementById('roll').value;
         var thenumber = retnum(thestring);
-        if (thenumber < 4875) {
+        if (thenumber < rollUnder) {
             start = init;
         }
-        if (thenumber > 4875) {
+        if (thenumber > rollUnder) {
             start = start * 2;
         }
         if (start > maxBetValue) {
             start = init;
         }
-        $Button.click();
+        btRoll.click();
         clearInterval(refreshIntervalId);
         roll();
     }
